@@ -12,22 +12,7 @@ function AccountContainer() {
     .then(data => setTransactions(data))
   }, [])
   
-  /*const addTransaction = (newTransaction) =>{
-    fetch("http://localhost:8001/transactions", {
-      method:"POST",
-      headers: {
-      "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTransaction),
-    })
-    .then((resp) => resp.json())
-    .then((data) => {
-      setTransactions((previousTransactions)=> [...previousTransactions, data]);
-  });
-  };
-  const handleSearch = (searchTerm) => {
-    setSearchTerm(searchTerm);
-  }*/
+  
   
   const filteredTransactions = transactions.filter((transaction) => 
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
